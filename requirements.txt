@@ -1,0 +1,7 @@
+pip install fastapi uvicorn
+pip install fastapi
+pip install uvicorn
+pip install pydantic
+pip install openai
+pip install python-dotenv
+pip install httpx
