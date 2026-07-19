@@ -1,2 +1,441 @@
-# malak-chat-api
-A simple REST API built with FastAPI for AI chat requests.
+# 🤖 AI Learning Notes
+
+This repository contains my structured study notes covering the fundamentals of **Artificial Intelligence**, **Generative AI**, **Large Language Models (LLMs)**, **REST APIs**, and **FastAPI**. These notes were taken during my AI training and organized for future reference.
+
+---
+
+# Day 1
+
+## Traditional AI vs Generative AI
+
+### Traditional AI
+
+Traditional AI focuses on:
+
+* Prediction
+* Classification
+
+It analyzes existing data and predicts outcomes without creating new content.
+
+### Generative AI
+
+Generative AI creates **new content** instead of only making predictions.
+
+Examples include:
+
+* Text generation
+* Image generation
+* Code generation
+* Audio generation
+
+---
+
+## Artificial Intelligence Hierarchy
+
+```text
+Artificial Intelligence
+│
+├── Machine Learning
+│   └── Deep Learning
+│       └── Generative AI
+│
+└── Rule-Based AI
+```
+
+---
+
+## Parameters (Weights)
+
+Parameters (Weights) are the values that the model learns during training. They store the knowledge acquired by the model.
+
+---
+
+## Transformer
+
+The Transformer processes the entire sentence together instead of processing one word at a time.
+
+It consists of:
+
+* **Query (Q)** → What am I looking for?
+* **Key (K)** → What information do I have?
+* **Value (V)** → What information will I provide if needed?
+
+The attention mechanism assigns a **Weight** that represents the importance of each piece of information.
+
+---
+
+## LLM Parameters
+
+### Temperature
+
+Controls creativity.
+
+* Low Temperature → More deterministic and less creative.
+* High Temperature → More creative but more random.
+
+### Top-p
+
+Limits token selection to the smallest set of high-probability tokens.
+
+### Max Tokens
+
+Defines the maximum length of the generated response.
+
+---
+
+## Encoding & Decoding
+
+* **Encoder** → Understands the input.
+* **Decoder** → Generates the output.
+
+---
+
+## API Concepts
+
+Main API concepts include:
+
+* Base URL
+* Endpoint
+* HTTP Methods
+* Headers
+* Request Body
+* JSON
+* Status Codes
+
+Common HTTP Methods:
+
+* GET → Retrieve data
+* POST → Create data
+* PUT → Replace/Edit data
+
+Common Status Codes:
+
+* 500 → Internal Server Error
+* 401 / 403 → Unauthorized
+
+---
+
+# 📅 Day 2
+
+## LLM Encoding & Decoding Pipeline
+
+```text
+Text
+   │
+Tokenizer
+   │
+Input IDs
+   │
+Embeddings
+   │
+Positional Encoding
+   │
+Transformer
+(Self-Attention)
+   │
+Logits
+   │
+Softmax
+   │
+Sampling
+(Temperature / Top-p / Top-k)
+   │
+Next Token
+   │
+Repeat
+```
+
+---
+## Self-Attention
+
+The Transformer uses Self-Attention to understand relationships between words.
+
+Components:
+
+* Query → The question
+* Key → The identifier
+* Value → The information
+
+---
+
+## Decoding
+
+The next token is selected using:
+
+* Temperature
+* Top-k
+* Top-p
+* Sampling
+
+---
+
+## API Request & Response
+
+A Request contains:
+
+* URL
+* Method
+* Headers
+* Body
+* Parameters
+
+### URL
+
+The URL contains the API Endpoint.
+
+### HTTP Methods
+
+* GET → Retrieve data
+* POST → Create new data
+* PUT / PATCH → Update data
+
+### Example Response
+
+```json
+{
+  "id": 5,
+  "name": "Malak"
+}
+```
+
+---
+
+## Parameters
+
+### Path Parameters
+
+```text
+/users/15
+```
+
+### Query Parameters
+
+Parameters appended after the `?` in the URL.
+
+---
+
+## Tasks
+
+* Integration with OpenAI Endpoint using Postman
+* Integration with OpenAI SDK
+
+---
+
+# 📅 Day 3
+
+## REST API
+
+REST stands for:
+
+**Representational State Transfer**
+
+REST APIs communicate over HTTP using methods such as:
+
+* GET
+* POST
+* PUT
+* PATCH
+* DELETE
+
+---
+
+## Endpoint
+
+An Endpoint is the address of a specific service inside an API.
+
+Example:
+
+```text
+https://api.groq.com/openai/v1/chat/completions
+```
+
+Breakdown:
+
+* **https://** → Protocol
+* **api.groq.com** → Domain
+* **openai/v1** → API Version
+* **chat/completions** → Endpoint
+
+---
+
+## Content-Type
+
+Examples:
+
+```text
+application/json
+text/plain
+text/html
+multipart/form-data
+text/css
+image/png
+application/pdf
+audio/mpeg
+```
+
+### Content-Type
+
+Tells the server:
+
+> "What am I sending?"
+
+### Accept
+
+Tells the server:
+
+> "What response format do I want to receive?"
+
+---
+
+# 📅 Day 4
+
+## FastAPI
+
+FastAPI is a **Framework** used to build high-performance REST APIs quickly.
+
+It is not just a validation tool.
+
+---
+
+## Request Flow
+
+```text
+Client
+   │
+HTTP Request
+   │
+FastAPI
+   │
+Endpoint
+   │
+Validation
+(Pydantic)
+   │
+Business Logic
+   │
+HTTP Response
+```
+
+---
+
+## Request Model
+
+```python
+class ChatRequest(BaseModel):
+    question: str
+```
+
+This model defines the expected structure of the incoming JSON request.
+
+---
+
+## Validation
+
+Validation is handled using **Pydantic**.
+
+Example:
+
+```python
+class ChatRequest(BaseModel):
+    question: str
+```
+
+This means FastAPI expects:
+
+* A field named `question`
+* Its value must be a string
+
+FastAPI uses Pydantic to validate requests automatically before executing the endpoint.
+
+---
+
+## Business Logic
+
+The response generated by the API depends entirely on the code written by the developer.
+
+Example:
+
+```python
+answer = f"You asked: {request.question}"
+```
+
+Other examples:
+
+```python
+answer = request.question.upper()
+```
+
+```python
+answer = request.question[::-1]
+```
+
+```python
+answer = call_openai(request.question)
+```
+
+The developer decides what happens inside the endpoint.
+
+---
+
+## FastAPI vs Pydantic
+
+| FastAPI           | Pydantic                 |
+| ----------------- | ------------------------ |
+| Manages the API   | Validates data           |
+| Handles routing   | Checks request structure |
+| Returns responses | Validates input types    |
+
+---
+
+## Running the Application
+
+Create the FastAPI application:
+
+```python
+app = FastAPI()
+```
+
+Run the server:
+
+```bash
+uvicorn main:app --reload
+```
+
+* `main` → Python file name (`main.py`)
+* `app` → FastAPI application instance
+* `--reload` → Automatically reloads the server after code changes
+
+---
+
+# Topics Covered
+
+* Artificial Intelligence
+* Machine Learning
+* Deep Learning
+* Generative AI
+* Transformers
+* Self-Attention
+* Parameters & Weights
+* Temperature
+* Top-p
+* Max Tokens
+* Tokenization
+* Embeddings
+* Encoding & Decoding
+* REST APIs
+* HTTP Methods
+* Endpoints
+* Status Codes
+* Content-Type
+* Request & Response
+* FastAPI
+* Pydantic
+* Validation
+* Business Logic
+
+---
+
+
+**Malak Ahmed Ashour Mohamed**
+
+These notes were prepared during my AI learning journey and organized for revision, reference, and future projects.
