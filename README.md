@@ -1,4 +1,4 @@
-# 🤖 AI Learning Notes
+# AI Learning Notes
 
 This repository contains my structured study notes covering the fundamentals of **Artificial Intelligence**, **Generative AI**, **Large Language Models (LLMs)**, **REST APIs**, and **FastAPI**. These notes were taken during my AI training and organized for future reference.
 
