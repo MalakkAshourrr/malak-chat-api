@@ -34,12 +34,21 @@ Examples include:
 
 ```text
 Artificial Intelligence
-│
-├── Machine Learning
-│   └── Deep Learning
-│       └── Generative AI
-│
-└── Rule-Based AI
+
+├── Rule-Based Systems
+│      └── Expert Systems
+
+└── Machine Learning
+       |
+       └── Deep Learning
+              |
+              ├── Computer Vision
+              ├── NLP
+              └── Generative AI
+                     |
+                     ├── LLMs
+                     ├── Diffusion Models
+                     └── GANs
 ```
 
 ---
