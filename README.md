@@ -115,7 +115,7 @@ Common Status Codes:
 
 ---
 
-# 📅 Day 2
+#  Day 2
 
 ## LLM Encoding & Decoding Pipeline
 
@@ -221,7 +221,7 @@ Parameters appended after the `?` in the URL.
 
 ---
 
-# 📅 Day 3
+#  Day 3
 
 ## REST API
 
@@ -287,7 +287,7 @@ Tells the server:
 
 ---
 
-# 📅 Day 4
+#  Day 4
 
 ## FastAPI
 
