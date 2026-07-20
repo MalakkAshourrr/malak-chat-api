@@ -5,7 +5,7 @@ import requests
 
 app = FastAPI()
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "gsk_Nu"
 
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
