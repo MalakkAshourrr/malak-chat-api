@@ -5,24 +5,13 @@ from openai import OpenAI
 import fitz
 app = FastAPI()
 
-# -----------------------
-# AI Client
-# -----------------------
 client = OpenAI(
     api_key="api_J2Gb3quyU4R6cKrYlrRFuOS0hBVohnE",
     base_url="https://api-pilot-sandbox.aurai.solutions/v1"
 )
 
-# -----------------------
-# Request Model
-# -----------------------
 class ChatRequest(BaseModel):
     question: str
-
-# -----------------------
-# LLM Function
-# -----------------------
-
 
 def extract_pdf_text(pdf_file):
 
@@ -63,9 +52,7 @@ Question:
     )
 
     return response.choices[0].message.content
-# -----------------------
-# Endpoint
-# -----------------------
+
 @app.post("/v1/malak-chat")
 def malak_chat(
     instructions: str = Form(...),
