@@ -5,3 +5,7 @@ pip install pydantic
 pip install openai
 pip install python-dotenv
 pip install httpx
+pip install requests
+pip install fastapi uvicorn requests
+pip install -r requirements.txt
+pip install python-multipart
