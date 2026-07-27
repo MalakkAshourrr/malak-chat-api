@@ -415,6 +415,92 @@ uvicorn main:app --reload
 * `--reload` → Automatically reloads the server after code changes
 
 ---
+# Day5
+
+## Prompting Techniques
+Prompt Engineering helps to effectively design and improve prompts to get better results on different tasks with LLMs.
+
+While the previous basic examples were fun, in this section we cover more advanced prompting engineering techniques that allow us to achieve more complex tasks and improve reliability and performance of LLMs.
+
+Zero-shot Prompting
+Few-shot Prompting
+Chain-of-Thought Prompting
+Meta Prompting
+Self-Consistency
+Generate Knowledge Prompting
+Prompt Chaining
+Tree of Thoughts
+Retrieval Augmented Generation
+Automatic Reasoning and Tool-use
+Automatic Prompt Engineer
+Active-Prompt
+Directional Stimulus Prompting
+Program-Aided Language Models
+ReAct
+Reflexion
+Multimodal CoT
+Graph Prompting
+
+---
+
+# Day6
+
+## What is RAG?
+Retrieval-Augmented Generation
+•  Retrieval → Finding relevant information from external data. 
+•  Generation → Using an LLM to generate an answer based on the retrieved information.
+
+RAG Architecture
+                +----------------------+
+                |  PDF / Word / Docs   |
+                +----------+-----------+
+                           |
+                           |
+                     Split Documents
+                           |
+                           ▼
+                     Create Embeddings
+                           |
+                           ▼
+                    Vector Database
+                           ▲
+                           |
+                     Search Similarity
+                           ▲
+                           |
+User Question --------------+
+                           |
+                           ▼
+                     Retrieved Chunks
+                           |
+                           ▼
+                 Prompt + Retrieved Data
+                           |
+                           ▼
+                          LLM
+                           |
+                           ▼
+                        Final Answer
+
+Chunking
+بنقسم الملف لقطع صغيرة.
+Embeddings
+بيحول كل جملة إلى أرقام.
+Vector Database
+كل الـ Embeddings دي بنخزنها في قاعدة بيانات
+مثل:
+•	FAISS 
+•	ChromaDB 
+•	Pinecone 
+•	Weaviate 
+•	Milvus 
+•	Qdrant
+Embed the Question
+السؤال نفسه بيتحول إلى Vector.
+Similarity Search
+النظام يقارن Vector السؤال مع كل الـ Vectors الموجودة.
+
+
 
 # Topics Covered
 
