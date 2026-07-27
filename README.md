@@ -457,6 +457,7 @@ Retrieval-Augmented Generation
 ```
 
 RAG Architecture
+```
                 +----------------------+
                 |  PDF / Word / Docs   |
                 +----------+-----------+
@@ -487,11 +488,14 @@ RAG Architecture
                            |
                            ▼
                         Final Answer
+```
 
 Chunking
 بنقسم الملف لقطع صغيرة.
+```
 Embeddings
 بيحول كل جملة إلى أرقام.
+```
 Vector Database
 كل الـ Embeddings دي بنخزنها في قاعدة بيانات
 مثل:
@@ -501,11 +505,13 @@ Vector Database
 •	Weaviate 
 •	Milvus 
 •	Qdrant
+```
 Embed the Question
 السؤال نفسه بيتحول إلى Vector.
+```
 Similarity Search
 النظام يقارن Vector السؤال مع كل الـ Vectors الموجودة.
-
+```
 
 
 # Topics Covered
