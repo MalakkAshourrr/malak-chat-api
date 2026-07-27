@@ -420,8 +420,10 @@ uvicorn main:app --reload
 ## Prompting Techniques
 Prompt Engineering helps to effectively design and improve prompts to get better results on different tasks with LLMs.
 
-While the previous basic examples were fun, in this section we cover more advanced prompting engineering techniques that allow us to achieve more complex tasks and improve reliability and performance of LLMs.
+```
 
+While the previous basic examples were fun, in this section we cover more advanced prompting engineering techniques that allow us to achieve more complex tasks and improve reliability and performance of LLMs.
+```
 Zero-shot Prompting
 Few-shot Prompting
 Chain-of-Thought Prompting
@@ -446,29 +448,33 @@ Graph Prompting
 # Day6
 
 ## What is RAG?
+```
 Retrieval-Augmented Generation
+```
 •  Retrieval → Finding relevant information from external data. 
+```
 •  Generation → Using an LLM to generate an answer based on the retrieved information.
+```
 
 RAG Architecture
                 +----------------------+
                 |  PDF / Word / Docs   |
                 +----------+-----------+
-                           |
-                           |
-                     Split Documents
-                           |
-                           ▼
-                     Create Embeddings
-                           |
-                           ▼
-                    Vector Database
-                           ▲
-                           |
-                     Search Similarity
-                           ▲
-                           |
-User Question --------------+
+```                        |
+```                        |
+```                 Split Documents
+```                        |
+```                        ▼
+```                  Create Embeddings
+```                        |
+```                        ▼
+```                 Vector Database
+```                        ▲
+```                        |
+```                  Search Similarity
+```                        ▲
+```                        |
+```User Question --------------+
                            |
                            ▼
                      Retrieved Chunks
