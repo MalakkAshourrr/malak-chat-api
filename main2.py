@@ -8,7 +8,7 @@ app = FastAPI()
 # -----------------------
 # Groq Configuration
 # -----------------------
-GROQ_API_KEY = "api_gAAAAABqV53NXXTPzmZ-4KS2gqrPaRUvT_lgMHDmePjtNPk2JXQBW53cPtkhwBtKyt0a42O2DVQqLKnbp2zy2sIa0qphBhXiK4mEa2tOGmOG_J2Gb3quyU4R6cKrYlrRFuOS0hBVohnE"
+GROQ_API_KEY = "api_gAA"
 
 GROQ_URL = "https://api-pilot-sandbox.aurai.solutions/v1/chat/completions"
 
