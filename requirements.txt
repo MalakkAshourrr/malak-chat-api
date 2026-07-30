@@ -10,3 +10,10 @@ pip install fastapi uvicorn requests
 pip install -r requirements.txt
 pip install python-multipart
 pip install fastapi uvicorn python-multipart pymupdf sentence-transformers scikit-learn openai numpy
+pip install langchain==0.2.16
+pip install langchain-community==0.2.16
+pip install langchain-openai==0.1.25
+pip install langchain-huggingface==0.0.3
+pip install faiss-cpu
+pip install sentence-transformers
+pip install pymupdf
